@@ -8,6 +8,28 @@
         body {
             background-color: pink; /* Fondo rosa */
             color: white;           /* Texto blanco */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Estilo para que el contenedor del vídeo sea responsivo */
+        .contenedor-video {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;       /* Ancho máximo recomendado */
+            margin: 30px auto 0;    /* Centrado con margen arriba */
+        }
+
+        .contenedor-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;     /* Bordes redondeados opcionales */
         }
     </style>
 </head>
@@ -16,6 +38,16 @@
     <h1>Hola, mundo</h1>
     <h2>Irene Galán Ruiz</h2>
     <p>Este es un texto visible para los usuarios.</p>
+
+    <!-- Vídeo incrustado al final -->
+    <div class="contenedor-video">
+        <iframe 
+            src="https://www.youtube.com/embed/jOWL-qeA_GU" 
+            title="Reproductor de vídeo de YouTube" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
 </body>
 </html>
