@@ -3,98 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irene Galán Ruiz</title>
-    <!-- Fuente moderna estilo marca de moda -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Stradivarius Style — Irene Galán Ruiz</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #ffffff; /* Fondo blanco limpio */
-            color: #111111;           /* Texto negro elegante */
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            text-align: center;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 600;
-            color: #666666;
-            margin-bottom: 12px;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: -0.5px;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-        }
-
-        p {
-            font-size: 1rem;
-            font-weight: 300;
-            color: #555555;
-            letter-spacing: 0.5px;
-            margin-bottom: 40px;
-        }
-
-        /* Contenedor responsivo 16:9 con estética pulida */
-        .contenedor-video {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-            border-radius: 4px;
-            border: 1px solid #eaeaea;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .contenedor-video iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="bg-white text-black antialiased selection:bg-black selection:text-white">
 
-    <div class="container">
-        <h1>Hola, mundo</h1>
-        <h2>Irene Galán Ruiz</h2>
-        <p>Este es un texto visible para los usuarios.</p>
-
-        <div class="contenedor-video">
-            <iframe 
-                src="https://www.youtube.com/embed/jOWL-qeA_GU" 
-                title="Reproductor de vídeo de YouTube" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-            </iframe>
-        </div>
+    <!-- Top Announcement Bar -->
+    <div class="bg-black text-white text-[11px] font-medium tracking-widest text-center py-2 px-4 uppercase">
+        Envío gratuito a tienda en pedidos superiores a 30€ • Devoluciones ampliadas a 60 días
     </div>
 
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Left: Mobile Menu & Search -->
+            <div class="flex items-center space-x-4">
+                <button class="md:hidden p-2 hover:bg-gray-100 rounded-full transition" aria-label="Menú">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+                <div class="relative hidden sm:block w-48 lg:w-64">
+                    <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" placeholder="BUSCAR PRODUCTO..." class="w-full bg-gray-100 text-[11px] font-medium tracking-wider pl-9 pr-4 py-2 rounded-full border-transparent focus:border-black focus:bg-white focus:ring-0 transition uppercase outline-none">
+                </div>
+            </div>
+
+            <!-- Center: Logo -->
+            <a href="#" class="text-2xl font-black tracking-[0.25em] uppercase hover:opacity-80 transition">
+                STRADIVARIUS
+            </a>
+
+            <!-- Right: Actions -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <button class="p-2 hover:bg-gray-100 rounded-full transition relative" aria-label="Favoritos">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-black rounded-full"></span>
+                </button>
+                <button class="p-2 hover:bg-gray-100 rounded-full transition relative" aria-label="Cesta">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="absolute -top-1 -right-1 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">2</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Subnav Categories -->
+        <nav class="hidden md:flex justify-center border-t border-gray-100 py-3 px-4 space-x-8 text-xs font-semibold tracking-widest uppercase">
+            <a href="#editorial" class="hover:underline underline-offset-4">EDITORIAL</a>
+            <a href="#novedades" class="hover:underline underline-offset-4 text-red-600 font-bold">NEW IN</a>
+            <a href="#novedades" class="hover:underline underline-offset-4">ROPA</a>
+            <a href="#novedades" class="hover:underline underline-offset-4">ZAPATOS</a>
+            <a href="#novedades" class="hover:underline underline-offset-4">ACCESORIOS</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Banner Section -->
+        <section class="relative h-[80vh] bg-neutral-900 text-white flex items-center justify-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=2000" alt="Moda Stradivarius" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-105 transition-transform duration-1000">
+            <div class="relative z-10 text-center px-4 max-w-4xl">
+                <p class="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase mb-3 text-gray-200">NUEVA COLECCIÓN</p>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extralight tracking-tight mb-4 uppercase">
+                    Hola, Mundo
+                </h1>
+                <h2 class="text-2xl sm:text-4xl font-normal tracking-widest mb-6 uppercase text-gray-100">
+                    Irene Galán Ruiz
+                </h2>
+                <p class="text-sm sm:text-base font-light tracking-widest max-w-xl mx-auto mb-8 text-gray-300">
+                    Descubre las últimas tendencias en moda femenina, accesorios y calzado diseñado para marcar estilo cada día.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#editorial" class="bg-white text-black hover:bg-black hover:text-white px-8 py-3.5 text-xs font-semibold tracking-widest uppercase transition duration-300">
+                        Ver Vídeo Editorial
+                    </a>
+                    <a href="#novedades" class="border border-white text-white hover:bg-white hover:text-black px-8 py-3.5 text-xs font-semibold tracking-widest uppercase transition duration-300">
+                        Explorar Catálogo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Editorial Section -->
+        <section id="editorial" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-semibold tracking-[0.25em] text-gray-400 uppercase">EXPERIENCIA AUDIOVISUAL</span>
+                <h3 class="text-3xl font-light tracking-tight uppercase mt-1 mb-4">Campaña Otoño / Invierno</h3>
+                <p class="text-sm text-gray-600 tracking-wide font-light">
+                    Explora el vídeo oficial de campaña incrustado directamente en nuestra galería editorial.
+                </p>
+            </div>
+
+            <!-- YouTube Video Player -->
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl bg-black border border-gray-200">
+                <iframe 
+                    class="w-full h-full"
+                    src="https://www.youtube.com/embed/jOWL-qeA_GU?autoplay=0&rel=0" 
+                    title="Reproductor de vídeo Stradivarius" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section id="novedades" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 pb-4 border-b border-gray-200">
+                    <div>
+                        <span class="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">CATÁLOGO DESTACADO</span>
+                        <h3 class="text-2xl sm:text-3xl font-light tracking-tight uppercase mt-1">Novedades de la semana</h3>
+                    </div>
+                    <a href="#" class="text-xs font-semibold tracking-widest uppercase border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition mt-4 md:mt-0">
+                        Ver todo el catálogo (120)
+                    </a>
+                </div>
+
+                <!-- Products -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] bg-gray-200 overflow-hidden rounded-md mb-4">
+                            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" alt="Abrigo oversize" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-black text-white text-[10px] font-bold tracking-widest px-2 py-1 uppercase">Nuevo</span>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 hover:bg-white rounded-full transition shadow-sm">
+                                <i data-lucide="heart" class="w-4 h-4 text-black"></i>
+                            </button>
+                        </div>
+                        <h4 class="text-xs font-medium tracking-wider uppercase">Abrigo lana oversize</h4>
+                        <p class="text-xs text-gray-500 mt-1">59,99 €</p>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] bg-gray-200 overflow-hidden rounded-md mb-4">
+                            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800" alt="Vestido largo" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 hover:bg-white rounded-full transition shadow-sm">
+                                <i data-lucide="heart" class="w-4 h-4 text-black"></i>
+                            </button>
+                        </div>
+                        <h4 class="text-xs font-medium tracking-wider uppercase">Vestido midi punto</h4>
+                        <p class="text-xs text-gray-500 mt-1">29,99 €</p>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] bg-gray-200 overflow-hidden rounded-md mb-4">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800" alt="Mocasines piel" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold tracking-widest px-2 py-1 uppercase">-30%</span>
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 hover:bg-white rounded-full transition shadow-sm">
+                                <i data-lucide="heart" class="w-4 h-4 text-black"></i>
+                            </button>
+                        </div>
+                        <h4 class="text-xs font-medium tracking-wider uppercase">Mocasines plataforma piel</h4>
+                        <p class="text-xs text-gray-500 mt-1"><span class="line-through text-gray-400 mr-2">39,99 €</span> 27,99 €</p>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] bg-gray-200 overflow-hidden rounded-md mb-4">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800" alt="Bolso hombro" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <button class="absolute top-3 right-3 p-2 bg-white/80 hover:bg-white rounded-full transition shadow-sm">
+                                <i data-lucide="heart" class="w-4 h-4 text-black"></i>
+                            </button>
+                        </div>
+                        <h4 class="text-xs font-medium tracking-wider uppercase">Bolso hombro estructurado</h4>
+                        <p class="text-xs text-gray-500 mt-1">22,99 €</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription Section -->
+        <section class="py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-200 text-center">
+            <div class="max-w-xl mx-auto">
+                <i data-lucide="mail" class="w-8 h-8 mx-auto mb-4 text-gray-400 stroke-1"></i>
+                <h3 class="text-2xl font-light tracking-tight uppercase mb-2">Únete a nuestra Newsletter</h3>
+                <p class="text-xs text-gray-500 tracking-wider mb-6 uppercase">Recibe un 10% de descuento en tu primera compra y entérate antes que nadie de las novedades.</p>
+                <form onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte!');" class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="INTRODUCE TU EMAIL" required class="flex-1 bg-gray-100 text-xs tracking-wider px-4 py-3 rounded-none border border-transparent focus:border-black focus:bg-white outline-none uppercase">
+                    <button type="submit" class="bg-black text-white hover:bg-gray-800 text-xs font-semibold tracking-widest px-8 py-3 uppercase transition">
+                        Suscribirme
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-xs pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div>
+                <h4 class="font-bold tracking-widest uppercase mb-4 text-gray-300">AYUDA</h4>
+                <ul class="space-y-2 text-gray-400 font-light">
+                    <li><a href="#" class="hover:text-white transition">Comprar online</a></li>
+                    <li><a href="#" class="hover:text-white transition">Pago</a></li>
+                    <li><a href="#" class="hover:text-white transition">Envío</a></li>
+                    <li><a href="#" class="hover:text-white transition">Devoluciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold tracking-widest uppercase mb-4 text-gray-300">EMPRESA</h4>
+                <ul class="space-y-2 text-gray-400 font-light">
+                    <li><a href="#" class="hover:text-white transition">Quiénes somos</a></li>
+                    <li><a href="#" class="hover:text-white transition">Trabaja con nosotros</a></li>
+                    <li><a href="#" class="hover:text-white transition">Prensa</a></li>
+                    <li><a href="#" class="hover:text-white transition">Sostenibilidad</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold tracking-widest uppercase mb-4 text-gray-300">SÍGUENOS</h4>
+                <div class="flex space-x-4 text-gray-400">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold tracking-widest uppercase mb-4 text-gray-300">TIENDAS</h4>
+                <p class="text-gray-400 font-light leading-relaxed">Encuentra tu tienda Stradivarius más cercana y consulta los horarios de apertura.</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center text-gray-500 font-light text-[11px] space-y-4 md:space-y-0">
+            <p>© 2026 Stradivarius Style — Diseño adaptado para Irene Galán Ruiz.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-white transition">Política de privacidad</a>
+                <a href="#" class="hover:text-white transition">Condiciones de compra</a>
+                <a href="#" class="hover:text-white transition">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
