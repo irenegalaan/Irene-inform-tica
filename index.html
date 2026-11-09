@@ -3,23 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título de mi Página</title>
+    <title>Irene Galán Ruiz</title>
+    <!-- Fuente moderna estilo marca de moda -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: pink; /* Fondo rosa */
-            color: white;           /* Texto blanco */
-            font-family: Arial, sans-serif;
-            padding: 20px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Estilo para que el contenedor del vídeo sea responsivo */
+        body {
+            background-color: #ffffff; /* Fondo blanco limpio */
+            color: #111111;           /* Texto negro elegante */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+            color: #666666;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #555555;
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+        }
+
+        /* Contenedor responsivo 16:9 con estética pulida */
         .contenedor-video {
             position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            max-width: 800px;       /* Ancho máximo recomendado */
-            margin: 30px auto 0;    /* Centrado con margen arriba */
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #eaeaea;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .contenedor-video iframe {
@@ -29,24 +76,24 @@
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 8px;     /* Bordes redondeados opcionales */
         }
     </style>
 </head>
 <body>
 
-    <h1>Hola, mundo</h1>
-    <h2>Irene Galán Ruiz</h2>
-    <p>Este es un texto visible para los usuarios.</p>
+    <div class="container">
+        <h1>Hola, mundo</h1>
+        <h2>Irene Galán Ruiz</h2>
+        <p>Este es un texto visible para los usuarios.</p>
 
-    <!-- Vídeo incrustado al final -->
-    <div class="contenedor-video">
-        <iframe 
-            src="https://www.youtube.com/embed/jOWL-qeA_GU" 
-            title="Reproductor de vídeo de YouTube" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-        </iframe>
+        <div class="contenedor-video">
+            <iframe 
+                src="https://www.youtube.com/embed/jOWL-qeA_GU" 
+                title="Reproductor de vídeo de YouTube" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
 </body>
